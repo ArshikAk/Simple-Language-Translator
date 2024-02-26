@@ -4,29 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Language Translator</title>
 </head>
 <body>
-    <div class="translator">
-        <div class="language">
-            <select>
-                <option value="en">English</option>
-            </select>
-
-            <div class="exchange">
-                
+    <center>
+        <div class="translator">
+            <div class="language">
+                <select>
+                    
+                </select>
+    
+                <div class="bx bx-transfer"></div>
+    
+                <select>
+                    
+                </select>
             </div>
+    
+            <div class="content">
+                <div class="frombox">
+                    <textarea maxlength="1000" id="from" placeholder="Enter the Text to Translate" class="fromtext"></textarea>
 
-            <select>
-                <option value="en">Malayalam</option>
-            </select>
+                    <div class="icons">
+                        <div class="bx bx-volume-full fromvoice"></div>
+                        <div>
+                            <p class="count">0/1000</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="tobox">
+                    <textarea maxlength="1000" id="to" disabled class="totext"></textarea>
+
+                    <div class="icons">
+                        <div class="bx bx-volume-full tovoice"></div>
+                        <div class="bx bx-copy"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="">
-            <textarea maxlength="5000" id="from"></textarea>
-
-            <textarea maxlength="5000" id="to" disabled></textarea>
+        <div class="button">
+            <button>Translate</button>
         </div>
-    </div>
+    </center>
+    <script src="code.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
