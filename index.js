@@ -4,7 +4,8 @@ let button = document.querySelector(".button");
 let to = document.querySelector(".totext");
 let fromvoice = document.querySelector(".fromvoice")
 let tovoice = document.querySelector(".tovoice")
-let count = document.querySelector(".count");
+let wordcount = document.querySelector(".count");
+let copytext = document.querySelector(".copy");
 
 langOption.forEach((get,con) =>{
 
@@ -15,7 +16,7 @@ langOption.forEach((get,con) =>{
         {
             selected = "selected";
         }
-        else if(con == 1 && code == "ta"){
+        else if(con == 1 && code == "ta-LK"){
             selected = "selected";
         }
 
@@ -48,12 +49,16 @@ fromvoice.addEventListener("click",function(){
 
 tovoice.addEventListener("click",function(){
 
-    let talk;
-    talk = new SpeechSynthesisUtterance(to.value);
-    talk.lang = langOption[1].value;
-    speechSynthesis.speak(talk);
+    let transtalk;
+    transtalk = new SpeechSynthesisUtterance(to.value);
+    transtalk.lang = langOption[1].value;
+    speechSynthesis.speak(transtalk);
 })
 
-count.addEventListener("click",function(){
-    count.innerHTML = from.value.length;
+from.addEventListener("keyup",function(){
+    wordcount.innerHTML = `${from.value.length}/1000`;
+})
+
+copytext.addEventListener("click",function(){
+    navigator.clipboard.writeText(to.value);
 })
